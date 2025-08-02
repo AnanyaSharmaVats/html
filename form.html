@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Samsara Sign In</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-image: url('https://static.cloud.samsara.com/assets/signin-bg-connected-operations-2025.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+    }
+
+    .form-wrapper {
+      width: 400px;
+      min-height: 100vh;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .form-box {
+      width: 100%;
+      max-width: 350px;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.5rem;
+      background-color: #0066ff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 500px) {
+      .form-wrapper {
+        width: 100%;
+      }
+
+      body {
+        background-position: right;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-wrapper">
+  <div class="form-box">
+    <form id="signinForm" onsubmit="return false;">
+      <label for="email">Email</label>
+      <input type="text" id="email" placeholder="Enter your email">
+      <div id="emailError" class="error"></div>
+
+      <div id="passwordSection" style="display:none;">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password">
+      </div>
+
+      <button type="submit" onclick="signIn()">Next</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  const correctEmail = "correctemail@gmail.com";
+  const correctPassword = "correctpassword@123";
+
+  function signIn() {
+    const email = document.getElementById("email").value.trim();
+    const emailError = document.getElementById("emailError");
+    const passwordSection = document.getElementById("passwordSection");
+    const passwordInput = document.getElementById("password");
+
+    if (email.toLowerCase() !== correctEmail) {
+      emailError.textContent = "Enter an email address";
+      passwordSection.style.display = "none";
+      return;
+    } else {
+      emailError.textContent = "";
+      passwordSection.style.display = "block";
+    }
+
+    if (passwordSection.style.display === "block") {
+      const password = passwordInput.value;
+      if (!password) return;
+
+      if (password === correctPassword) {
+        alert("Signed in successfully!");
+      } else {
+        alert("Your email or password is incorrect.");
+      }
+    }
+  }
+</script>
+
+</body>
+</html>
