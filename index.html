@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Store</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    header {
+      background: #FFE3EA;
+      color: #E7829D;
+      padding: 16px;
+      position: sticky;
+      top: 0;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      gap: 8px;   
+      margin-top: 16px;
+    }
+
+    .nav a {
+      color: #E7829D;
+      text-decoration: none;
+    }
+
+    .nav.open .nav-links {
+      display: flex;
+    }
+
+    .hamburger {
+      background: none;
+      border: none;
+      font-size: 24px; 
+      color: #E7829D;
+      cursor: pointer;
+    }
+
+    @media (min-width: 768px) {
+      .hamburger {
+        display: none;
+      }
+
+      .nav-links {
+        display: flex !important;
+        flex-direction: row;
+        margin-top: 0;
+      }
+    }
+
+
+    .catalog {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding: 16px;
+    }
+
+    @media (min-width: 576px) {
+      .catalog {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 992px) {
+      .catalog {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .book-card {
+      background: #fff;
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    .book-card img {
+      width: 300px;
+      height: 500px;
+      object-fit: cover;
+    }
+
+    .book-card h3 {
+      margin: 12px 0 4px;
+    }
+
+    .book-card h3 a {
+      text-decoration: none;
+      color: #e7829d;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #e7829d;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="nav">
+      <div>PixelPaperbacks</div>
+      <button class="hamburger" aria-label="Toggle menu">☰</button>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Catalog</a>
+        <a href="#">Genres</a>
+        <a href="#">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="catalog">
+    <article class="book-card">
+      <img src="https://i.pinimg.com/736x/76/1f/b1/761fb175580801ac9912ad6bcf8155ed.jpg" alt="Book cover" />
+      <h3><a href="#">Book One</a></h3>
+      <p>by Author 1</p>
+      <p class="price"><data value="19.90">$19.90</data></p>
+    </article>
+
+    <article class="book-card">
+      <img src="https://i.pinimg.com/736x/12/23/d5/1223d55211471620d74b7faf51aa7f12.jpg" alt="Book cover" />
+      <h3><a href="#">Book Two</a></h3>
+      <p>by Author 2</p>
+      <p class="price"><data value="19.90">$19.90</data></p>
+    </article>
+
+    <article class="book-card">
+      <img src="https://i.pinimg.com/736x/06/2c/62/062c6294fb45e1dbd9333d0844bdf14a.jpg" alt="Book Cover" />
+      <h3><a href="#">Book Three</a></h3>
+      <p>by Author 3</p>
+      <p class="price"><data value="19.90">$19.90</data></p>
+    </article>
+
+    <article class="book-card">
+      <img src="https://i.pinimg.com/736x/1b/0a/9c/1b0a9cbefad979de1ae43a98d3026024.jpg" alt="Book cover" />
+      <h3><a href="#">Book Four</a></h3>
+      <p>by Author 4</p>
+      <p class="price"><data value="19.90">$19.90</data></p>
+    </article>
+
+    <article class="book-card">
+      <img src="https://i.pinimg.com/736x/7a/cd/01/7acd01174d282c2519eda4ada5a23217.jpg" alt="Book Cover" />
+      <h3><a href="#">Book Five</a></h3>
+      <p>by Author 5</p>
+      <p class="price"><data value="19.90">$19.90</data></p>
+    </article>
+
+    <article class="book-card">
+      <img src="https://i.pinimg.com/1200x/35/d4/a7/35d4a7de74751b41be698577dcb8e4c2.jpg" alt="Book Cover" />
+      <h3><a href="#">Book Six</a></h3>
+      <p>by Author 6</p>
+      <p class="price"><data value="19.90">$19.90</data></p>
+    </article>
+  </section>
+
+  <script>
+    document.querySelector(".hamburger").onclick = () => {
+      document.querySelector(".nav").classList.toggle("open");
+    };
+  </script>
+
+</body>
+</html>
