@@ -18,3 +18,30 @@ body {
     margin-left: 30%;
     margin-right: 30%;
 }
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    color: black;
+    }
+
+.nav-links {
+      display: none;
+      flex-direction: column;
+      gap: 8px;   
+      margin-top: 16px;
+    }
+     
+.nav-links {
+        display: flex !important;
+        flex-direction: row;
+        margin-top: 0;
+      }
+
+.nav-icon{
+    width: 28px;
+    height: 28px;
+
+}
