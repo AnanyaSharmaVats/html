@@ -43,5 +43,10 @@ body {
 .nav-icon{
     width: 28px;
     height: 28px;
+    padding: 1cap;
+}
 
+.nav-center{
+    display: flex;
+    position: center;
 }
